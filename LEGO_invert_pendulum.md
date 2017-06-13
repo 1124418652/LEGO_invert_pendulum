@@ -19,15 +19,24 @@ W：车轮间距
 
 Φ = R/W * (Θ<sub>r</sub> - Θ<sub>l</sub>)
 
-x'<sub>m</sub> = R * Θ' *cosΦ
+x'<sub>m</sub> = R * Θ' * cosΦ
 
-y'<sub>m</sub> = R * Θ' *sinΦ
+y'<sub>m</sub> = R * Θ' * sinΦ
 
 **各点在坐标系中的位置：**
 
 x<sub>m</sub>: &int;x'<sub>m</sub>dt  
 y<sub>m</sub>: &int;y'<sub>m</sub>dt  
-z<sub>m</sub>: R
+z<sub>m</sub>: z<sub>m</sub>
 
+x<sub>l</sub>: x<sub>m</sub> - W/2 * sinΦ  
+y<sub>l</sub>: y<sub>m</sub> + W/2 * cosΦ  
+z<sub>l</sub>: z<sub>m</sub>
 
+x<sub>r</sub>: x<sub>m</sub> + W/2 * sinΦ  
+y<sub>r</sub>: y<sub>m</sub> - W/2 * cosΦ  
+z<sub>r</sub>: z<sub>m</sub>
 
+x<sub>b</sub>: x<sub>m</sub> + L * sinΨ * cosΦ  
+y<sub>b</sub>: y<sub>m</sub> + L * sinΨ * sinΦ  
+z<sub>b</sub>: z<sub>m</sub> + L * sinΨ  
