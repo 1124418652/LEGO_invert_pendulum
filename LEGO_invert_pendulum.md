@@ -16,6 +16,7 @@ W：车轮间距
 ### 各参数之间的相互关系
 
 Θ = 1/2 * (Θ<sub>l</sub> + Θ<sub>r</sub>)
+
 Φ = R/W * (Θ<sub>r</sub> - Θ<sub>l</sub>)
 
-
+x<top>.</top>
