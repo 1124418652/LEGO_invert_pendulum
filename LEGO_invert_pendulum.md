@@ -23,7 +23,11 @@ x'<sub>m</sub> = R * Θ' *cosΦ
 
 y'<sub>m</sub> = R * Θ' *sinΦ
 
-各点在坐标系中的位置：
+**各点在坐标系中的位置：**
 
-x<sub>m</sub>: &int;x'<sub>m</sub>dt
+x<sub>m</sub>: &int;x'<sub>m</sub>dt  
+y<sub>m</sub>: &int;y'<sub>m</sub>dt  
+z<sub>m</sub>: R
+
+
 
