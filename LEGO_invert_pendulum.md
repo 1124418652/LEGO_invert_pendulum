@@ -19,4 +19,4 @@ W：车轮间距
 
 Φ = R/W * (Θ<sub>r</sub> - Θ<sub>l</sub>)
 
-x<top>.</top>
+x<up>.</up>
