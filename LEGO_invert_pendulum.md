@@ -19,5 +19,11 @@ W：车轮间距
 
 Φ = R/W * (Θ<sub>r</sub> - Θ<sub>l</sub>)
 
-x<sup>.</sup><sub>m</sub>  = R * Θ<sup>.</sup> cosΦ
+x'<sub>m</sub> = R * Θ' *cosΦ
+
+y'<sub>m</sub> = R * Θ' *sinΦ
+
+各点在坐标系中的位置：
+
+x<sub>m</sub>: &int;x'<sub>m</sub>dt
 
