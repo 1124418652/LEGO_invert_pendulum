@@ -19,4 +19,5 @@ W：车轮间距
 
 Φ = R/W * (Θ<sub>r</sub> - Θ<sub>l</sub>)
 
-x<up>.</up>
+x<sup>.</sup><sub>m</sub>  = R * Θ<sup>.</sup> cosΦ
+
