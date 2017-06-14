@@ -40,3 +40,7 @@ z<sub>r</sub>: z<sub>m</sub>
 x<sub>b</sub>: x<sub>m</sub> + L * sinΨ * cosΦ  
 y<sub>b</sub>: y<sub>m</sub> + L * sinΨ * sinΦ  
 z<sub>b</sub>: z<sub>m</sub> + L * sinΨ  
+
+**平衡车中的力学关系：**
+
+
