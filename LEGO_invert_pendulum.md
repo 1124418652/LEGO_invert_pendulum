@@ -41,13 +41,24 @@ x<sub>b</sub>: x<sub>m</sub> + L * sinΨ * cosΦ
 y<sub>b</sub>: y<sub>m</sub> + L * sinΨ * sinΦ  
 z<sub>b</sub>: z<sub>m</sub> + L * sinΨ  
 
-###根据拉格朗日方程法对平衡车进行建模
+### 根据拉格朗日方程法对平衡车进行建模
 
 **对速度进行分析**  
 
 *车身的速度是由多个速度叠加得到的*  
 <table>
 	<tr>
-		<td> </td><td>车身倾斜引起</td><td>车轮转动引起</td><td>车身旋转引起</td>
+		<td> </td> <td>车身倾斜引起</td> <td>车轮转动引起</td> <td>车身旋转引起</td>
+	</tr>
+	<tr>
+		<td>x</td> <td>L*Ψ'*cosΨ*cosΦ</td> <td>(Θ'<sub>l</sub>+Θ'<sub>r</sub>)/2*R*cosΦ</td> 
+		<td>-Φ'*L*sinΨ*sinΦ</td>
+	</tr>
+	<tr>
+		<td>y</td> <td>L*Ψ'*cosΨ*sinΦ</td> <td>(Θ'<sub>l</sub>+Θ'<sub>r</sub>)/2*R*sinΦ</td>
+		<td>Φ'*L*sinΨ*cosΦ</td>
+	</tr>
+	<tr>
+		<td>z</td> <td>-L*Ψ'sinΨ</td> <td></td> <td></td>
 	</tr>
 </table>
