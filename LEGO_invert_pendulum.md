@@ -65,7 +65,8 @@ z<sub>b</sub>: z<sub>m</sub> + L * sinΨ
 
 <strong>*平衡车的总能量为车体的动能与两个车轮的动能之和*</strong>  
 <p>
-T=1/2*M*[(L*Ψ')<sup>2</sup>+(R*(Θ'<sub>l</sub>+Θ'<sub>r</sub>)/2)<sup>2</sup>+(R*L*(Θ'<sub>l</sub>-Θ'<sub>r</sub>)*sinΨ/W)<sup>2</sup>]<br />
+T=1/2*M*[(L*Ψ')<sup>2</sup>+(R*(Θ'<sub>l</sub>+Θ'<sub>r</sub>)/2)<sup>2</sup>+(R*L*(Θ'<sub>l</sub>-Θ'<sub>r</sub>)*sinΨ/W)<sup>2</sup>]
+		+R*L*(Θ'<sub>l</sub>+Θ'<sub>r</sub>)*Ψ'*cosΨ ------------车体平动动能<br />
 		+1/2*J<sub>Ψ</sub>*Ψ'<sup>2</sup> -----------车体相对于电机轴转动的动能<br />
 		+1/2*J<sub>Ψ</sub>((Θ'<sub>l</sub>-Θ'<sub>r</sub>)*R/W)<sup>2</sup> -----------车体相对于Z轴的转动动能<br />
 		+1/2*m*(Θ'<sub>l</sub>*R)<sup>2</sup>+1/2*m*(Θ'<sub>r</sub>*R)<sup>2</sup> -----------车轮的平动动能<br />
@@ -83,4 +84,5 @@ T=1/2*M*[(L*Ψ')<sup>2</sup>+(R*(Θ'<sub>l</sub>+Θ'<sub>r</sub>)/2)<sup>2</sup>
 </p>
 *其中M<sub>l</sub>和M<sub>r</sub>分别为左右电机的转矩，F<sub>l</sub>和F<sub>r</sub>分别为左右车轮所受的摩擦力*  
 
+**根据拉式方程建立平衡车的数学模型**
 
