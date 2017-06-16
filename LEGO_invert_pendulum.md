@@ -65,21 +65,21 @@ z<sub>b</sub>: z<sub>m</sub> + L * sinΨ
 
 <strong>*平衡车的总能量为车体的动能与两个车轮的动能之和*</strong>  
 <p>
-T=1/2*M*[(L*Ψ')<sup>2</sup>+(R*(Θ'<sub>l</sub>+Θ'<sub>r</sub>)/2)<sup>2</sup>+(R*L*(Θ'<sub>l</sub>-Θ'<sub>r</sub>)*sinΨ/W)<sup>2</sup>]  
-		+1/2*J<sub>Ψ</sub>*Ψ'<sup>2</sup> -----------车体相对于电机轴转动的动能  
-		+1/2*J<sub>Ψ</sub>((Θ'<sub>l</sub>-Θ'<sub>r</sub>)*R/W)<sup>2</sup> -----------车体相对于Z轴的转动动能  
-		+1/2*m*(Θ'<sub>l</sub>*R)<sup>2</sup>+1/2*m*(Θ'<sub>r</sub>*R)<sup>2</sup> -----------车轮的平动动能  
-		+1/2*J<sub>w</sub>(Θ'<sub>l</sub><sup>2</sup>+Θ'<sub>r</sub><sup>2</sup>) -----------车轮相对于电机轴的转动动能  
-		+m/4*((Θ'<sub>l</sub>-Θ'<sub>r</sub>)*R)<sup>2</sup> ----------车轮相对于Z轴的转动动能  
+T=1/2*M*[(L*Ψ')<sup>2</sup>+(R*(Θ'<sub>l</sub>+Θ'<sub>r</sub>)/2)<sup>2</sup>+(R*L*(Θ'<sub>l</sub>-Θ'<sub>r</sub>)*sinΨ/W)<sup>2</sup>]<br />
+		+1/2*J<sub>Ψ</sub>*Ψ'<sup>2</sup> -----------车体相对于电机轴转动的动能<br />
+		+1/2*J<sub>Ψ</sub>((Θ'<sub>l</sub>-Θ'<sub>r</sub>)*R/W)<sup>2</sup> -----------车体相对于Z轴的转动动能<br />
+		+1/2*m*(Θ'<sub>l</sub>*R)<sup>2</sup>+1/2*m*(Θ'<sub>r</sub>*R)<sup>2</sup> -----------车轮的平动动能<br />
+		+1/2*J<sub>w</sub>(Θ'<sub>l</sub><sup>2</sup>+Θ'<sub>r</sub><sup>2</sup>) -----------车轮相对于电机轴的转动动能<br />  
+		+m/4*((Θ'<sub>l</sub>-Θ'<sub>r</sub>)*R)<sup>2</sup> ----------车轮相对于Z轴的转动动能<br />
 </p>
 
 **对广义力进行分析**
 
 <strong>*平衡车系统中存在三个广义坐标：Ψ，Θ<sub>l</sub>，Θ<sub>r</sub>*</strong>  
 <p>
-Ψ方向上的广义力为：M*g*L*sinΨ-M<sub>l</sub>-M<sub>r</sub>  
-Θ<sub>l</sub>方向上的广义力为：M<sub>l</sub>-F<sub>l</sub>*R  
-Θ<sub>r</sub>方向上的广义力为：M<sub>r</sub>-F<sub>r</sub>*R  
+Ψ方向上的广义力为：M*g*L*sinΨ-M<sub>l</sub>-M<sub>r</sub><br />
+Θ<sub>l</sub>方向上的广义力为：M<sub>l</sub>-F<sub>l</sub>*R<br />
+Θ<sub>r</sub>方向上的广义力为：M<sub>r</sub>-F<sub>r</sub>*R<br />
 </p>
 *其中M<sub>l</sub>和M<sub>r</sub>分别为左右电机的转矩，F<sub>l</sub>和F<sub>r</sub>分别为左右车轮所受的摩擦力*  
 
