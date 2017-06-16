@@ -65,10 +65,10 @@ z<sub>b</sub>: z<sub>m</sub> + L * sinΨ
 
 *平衡车的总能量为车体的动能与两个车轮的动能之和*  
 T=1/2*M*[(L*Ψ')<sup>2</sup>+(R*(Θ'<sub>l</sub>+Θ'<sub>r</sub>)/2)<sup>2</sup>+(R*L*(Θ'<sub>l</sub>-Θ'<sub>r</sub>)*sinΨ/W)<sup>2</sup>]  
-  +1/2*J<sub>Ψ</sub>*Ψ'<sup>2</sup> 	车体相对于电机轴转动的动能  
-  +1/2*J<sub>Ψ</sub>((Θ'<sub>l</sub>-Θ'<sub>r</sub>)*R/W)<sup>2</sup> 	车体相对于Z轴的转动动能  
-  +1/2*m*(Θ'<sub>l</sub>*R)<sup>2</sup>+1/2*m*(Θ'<sub>r</sub>*R)<sup>2</sup>		车轮的平动动能  
-  +1/2*J<sub>w</sub>(Θ'<sub>l</sub><sup>2</sup>+Θ'<sub>r</sub><sup>2</sup>)		车轮相对于电机轴的转动动能  
-  +m/4*((Θ'<sub>l</sub>-Θ'<sub>r</sub>)*R)<sup>2</sup>		车轮相对于Z轴的转动动能  
+		+1/2*J<sub>Ψ</sub>*Ψ'<sup>2</sup>           车体相对于电机轴转动的动能  
+		+1/2*J<sub>Ψ</sub>((Θ'<sub>l</sub>-Θ'<sub>r</sub>)*R/W)<sup>2</sup>           车体相对于Z轴的转动动能  
+		+1/2*m*(Θ'<sub>l</sub>*R)<sup>2</sup>+1/2*m*(Θ'<sub>r</sub>*R)<sup>2</sup>            车轮的平动动能  
+		+1/2*J<sub>w</sub>(Θ'<sub>l</sub><sup>2</sup>+Θ'<sub>r</sub><sup>2</sup>)            车轮相对于电机轴的转动动能  
+		+m/4*((Θ'<sub>l</sub>-Θ'<sub>r</sub>)*R)<sup>2</sup>             车轮相对于Z轴的转动动能  
   
 
