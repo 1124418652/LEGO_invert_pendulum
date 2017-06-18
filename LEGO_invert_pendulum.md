@@ -86,6 +86,7 @@ T=1/2* M * [(L * Ψ')<sup>2</sup>+(R * (Θ'<sub>l</sub>+Θ'<sub>r</sub>)/2)<sup>
 *其中M<sub>l</sub>和M<sub>r</sub>分别为左右电机的转矩，F<sub>l</sub>和F<sub>r</sub>分别为左右车轮所受的摩擦力*  
 
 **根据拉式方程建立平衡车的数学模型**
+
 *Ψ方向上的拉式方程：*
 <p>
 ∂T/∂Ψ = M * [R * L * (Θ'<sub>l</sub> - Θ'<sub>r</sub>) / W]<sup>2</sup> * sinΨ * cosΨ - 1/2 * M * R * L* 
