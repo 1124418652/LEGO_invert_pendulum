@@ -87,7 +87,7 @@ T=1/2* M * [(L * Ψ')<sup>2</sup>+(R * (Θ'<sub>l</sub>+Θ'<sub>r</sub>)/2)<sup>
 
 **根据拉式方程建立平衡车的数学模型**
 
-*Ψ方向上的拉式方程：*
+<strong>*Ψ方向上的拉式方程：*</strong>  
 <p>
 ∂T/∂Ψ = M * [R * L * (Θ'<sub>l</sub> - Θ'<sub>r</sub>) / W]<sup>2</sup> * sinΨ * cosΨ - 1/2 * M * R * L* 
     (Θ'<sub>l</sub> + Θ'<sub>r</sub>) * Ψ' *sinΨ<br />
@@ -98,8 +98,14 @@ d(∂T/∂Ψ')/dt - ∂T/∂Ψ = M * g * L * sinΨ-M<sub>l</sub>-M<sub>r</sub> =
     + Θ''<sub>r</sub>) - 1/2 * M * R * L* (Θ''<sub>l</sub> + Θ''<sub>r</sub> - Θ'<sub>l</sub> - Θ'<sub>r</sub>)
     * Ψ' * sinΨ - M * [R * L * (Θ'<sub>l</sub> - Θ'<sub>r</sub>) / W]<sup>2</sup> * sinΨ * cosΨ<br />
 </p>
-
-
+*Θ<sub>l</sub>方向上的拉式方程*  
+<p>
+∂T/∂Θ'<sub>l</sub> = 1/4 * R<sup>2</sup> * (MW<sup>2</sup> + 4ML<sup>2</sup>sinΨ<sup>2</sup> + 4J<sub>Ψ</sub>)
+    /W<sup>2</sup> * (Θ'<sub>l</sub> - Θ'<sub>r</sub>) + 1/2 * MRLΨ'sinΨ + J<sub>w</sub>Θ'<sub>l</sub> + 1/2
+    * mR<sup>2</sup> * (3Θ'<sub>l</sub> - Θ'<sub>r</sub>)<br />
+∂T/∂Θ<sub>l</sub> = 0<br />
+d(∂T/∂Θ'<sub>l</sub>)/dt - ∂T/∂Θ<sub>l</sub> = M<sub>l</sub>-F<sub>l</sub>*R = <br />
+    
 
 
 
