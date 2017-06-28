@@ -22,10 +22,10 @@ class pid_set(object):
         self.SetAngle, self.ActualAngle, self.err, self.err_integrate, self.err_tmp, self.err_last, self.Kp, self.Ki, self.Kd = start_value
         
     def pid_realize(self):
-        print(self.err,self.err_integrate,self.err_tmp,self.err_last)
+        #print(self.err,self.err_integrate,self.err_tmp,self.err_last)
         self.err = self.SetAngle - self.ActualAngle
         self.err_integrate += self.err
-        diff_angle = self.Kp * (self.err - self.err_tmp) + self.Ki * self.err_integrate + self.Kd * (self.err - 2 * self.err_tmp + self.err_last)
+        diff_angle = self.Kp * (self.err - self.err_tmp) + self.Ki * self.err + self.Kd * (self.err - 2 * self.err_tmp + self.err_last)
         self.ActualAngle += diff_angle
         self.err_last = self.err_tmp
         self.err_tmp = self.err
@@ -38,9 +38,10 @@ if __name__ == '__main__':
     angle = []
     for i in range(1000):
         angle.append(pid1.pid_realize())
-        print(pid1.err,pid1.err_integrate,pid1.err_tmp,pid1.err_last)
+        #print(pid1.err,pid1.err_integrate,pid1.err_tmp,pid1.err_last)
     x = range(1000)
     y = angle
+    print(y)
     pl.plot(x,y)
     pl.show()
         
