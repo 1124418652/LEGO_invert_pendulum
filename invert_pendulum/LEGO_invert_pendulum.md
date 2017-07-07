@@ -16,9 +16,14 @@
 
 
 ### 受力分析
-![平衡车受力分析图](../image/invert_pendulum1.jpg)
-** 为了简化分析过程，假设两侧车轮转速始终相同，即不具备转弯功能  
+![平衡车受力分析图](../image/invert_pendulum1.jpg)  
+* 为了简化分析过程，假设两侧车轮转速始终相同，即不具备转弯功能  
 
+* **车轮转动方向的受力为:**F<sub>th<sub>w</sub></sub> = 2*(T<sub>b</sub> - F<sub>f</sub> * R)  
+* **车身转动方向的受力为:**F<sub>th<sub>b</sub></sub> = m<sub>b</sub> * g * l * sin(th<sub>b</sub>) - 2*T<sub>b</sub>  
+**拉格朗日方程**  
+![拉格朗日方程](../image/lagrange_equation.jpg)  
+<p>根据拉格朗日方程公式，即可写出该平衡车的拉格朗日微分方程组</p>
 
 
 
