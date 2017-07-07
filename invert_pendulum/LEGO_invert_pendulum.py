@@ -55,14 +55,24 @@ def lagrange_equation(L, th):
     return L_equ
     
     
-equ_th_b = expand(simplify(lagrange_equation(L, th_b) - F_th_b))
-equ_th_w = expand(simplify(lagrange_equation(L, th_w) - F_th_w))
-print("the lagrange equation of th_b:\n")
-pprint(equ_th_b)
-print("the lagrange equation of th_w:\n")
-pprint(equ_th_w)
+var("dth_b dth_w dw_w dw_b")
+sublist = [
+    (D(th_b(t),t,t), dw_b),
+    (D(th_b(t),t), dth_b),
+    (D(th_w(t),t,t), dw_w),
+    (D(th_w(t),t), dth_w)    
+    ]    
+    
+    
+equ_th_b = expand(simplify(lagrange_equation(L, th_b) - F_th_b)).subs(sublist)
+equ_th_w = expand(simplify(lagrange_equation(L, th_w) - F_th_w)).subs(sublist)
 
+val = solve((equ_th_b, equ_th_w), (dw_b, dw_w))
+dw_b, dw_w = val[dw_b], val[dw_w]
 
-
+    
+    
+    
+    
 
 
