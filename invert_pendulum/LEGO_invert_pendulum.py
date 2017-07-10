@@ -51,7 +51,7 @@ def lagrange_equation(L, th):
     L_equ = ddL_th.diff(t,1) - dL_th
     #print("the lagrange equation of %r is:\n"%th)
     #pprint(simplify(L_equ))
-    print("\n")
+    #print("\n")
     return L_equ
     
     
