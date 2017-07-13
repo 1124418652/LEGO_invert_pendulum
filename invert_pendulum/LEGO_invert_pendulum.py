@@ -31,7 +31,7 @@ v_w = R * dth_w
 
 #calculate the force in the direction of th_b and th_w
 F_th_b = m_b * g * l * sin(th_b) - 2*T_b
-F_th_w = 2*(T_b - F_f * R)
+F_th_w = 2*(T_b - bm*(1/2*m_b+m_w) * R)
 
 
 #calculate the lagrange value
@@ -67,7 +67,7 @@ equ_th_w = expand(simplify(lagrange_equation(L, th_w) - F_th_w)).subs(sublist)
 
 val = solve((equ_th_b, equ_th_w), (dw_b, dw_w))
 dw_b, dw_w = val[dw_b], val[dw_w]
-
+pprint(dw_b)
     
     
     
