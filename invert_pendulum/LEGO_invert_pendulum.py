@@ -31,7 +31,7 @@ v_w = R * dth_w
 
 #calculate the force in the direction of th_b and th_w
 F_th_b = m_b * g * l * sin(th_b) - 2*T_b
-F_th_w = 2*(T_b - bm*(1/2*m_b+m_w) * R)
+F_th_w = 2*(T_b - bm*(1/2*m_b+m_w)*g * R)
 
 
 #calculate the lagrange value
