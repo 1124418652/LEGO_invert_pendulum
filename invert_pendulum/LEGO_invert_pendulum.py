@@ -41,6 +41,7 @@ L = L_b + L_w
 
 print("the lagrange value is:\n")
 pprint(simplify(L))
+print("\n")
 
 #define the function which can calculate lagrange equations
 def lagrange_equation(L, th):
@@ -67,7 +68,7 @@ equ_th_w = expand(simplify(lagrange_equation(L, th_w) - F_th_w)).subs(sublist)
 
 val = solve((equ_th_b, equ_th_w), (dw_b, dw_w))
 dw_b, dw_w = val[dw_b], val[dw_w]
-pprint(dw_b)
+#pprint(dw_b)
     
     
     
