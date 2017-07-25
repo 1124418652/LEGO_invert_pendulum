@@ -52,7 +52,7 @@ class pid_set(object):
 			self.err_integrate += self.err_integrate
 		speed = self.Kp * self.err + index * self.Ki * self.err_integrate + self.Kd * (self.err - self.err_tmp)
 		self.err_tmp = self.err
-		self.duty_cycle = 8.95 * speed - 53.94          #the value of k should be confirmed through the relationship between duty_cycle and speed
+		self.duty_cycle = 8.95 * speed - 53.94                #the value of k should be confirmed through the relationship between duty_cycle and speed
 		return self.duty_cycle
 		
 			                    
@@ -69,6 +69,12 @@ if __name__ == "__main__":
 	for y in file_name:
 		file_path[y] = os.path.join(dir_path, y)
 
+	pid1 = pid_set()
+	pid1.get_SetSpeed(100)
+	start = time.perf_counter()
+	while time.perf_counter() - start <= 5:
+		with open(file_path['speed'], 'r') as f1:
+			pid1.get_ActualSpeed(f1.readline())
 
 
 
