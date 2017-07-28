@@ -5,6 +5,8 @@ from __future__ import division
 import time
 import os
 import sys
+import csv
+
 
 #define PID controller
 class pid_set(object):
@@ -65,7 +67,7 @@ if __name__ == "__main__":
 		file_path[y] = os.path.join(dir_path, y)
 		
 	pid1 = pid_set()
-	pid1.get_SetData(2000)
+	pid1.get_SetData(500)
 	angle = []
 	
 	#make sure the initial angle is 0
@@ -99,8 +101,8 @@ if __name__ == "__main__":
 	print(angle)	
 
 	with open("angle.csv",'w') as fa:
-		fa.write(str(angle))
-		
+		writer = csv.writer(fa)
+		writer.writerow(angle)
 		
 	
 
