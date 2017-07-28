@@ -5,6 +5,7 @@ from __future__ import division
 import time
 import os
 import sys
+import csv
 
 
 #define PID controller
@@ -13,7 +14,7 @@ class pid_set(object):
 	def __init__(self,
 				SetSpeed = 0, ActualSpeed = 0, duty_cycle = 0,
 				err = 0, err_integrate = 0, err_tmp = 0, err_last = 0,
-				Kp = 1, Ki = 0.08, Kd = 2):
+				Kp = 1, Ki = 0.1, Kd = 2):
 		self.SetSpeed = SetSpeed                    #the expected speed
 		self.ActualSpeed = ActualSpeed              #the actual speed
 		self.duty_cycle = duty_cycle                #the mark_space ratio
@@ -80,7 +81,7 @@ if __name__ == "__main__":
 	with open(file_path['command'], 'w') as command:
 		command.write('run-direct')
 	start = time.perf_counter()
-	while time.perf_counter() - start <= 10:
+	while time.perf_counter() - start <= 20:
 		with open(file_path['speed'], 'r') as f1:
 			val = int(f1.readline())
 			pid1.get_ActualSpeed(val)
@@ -91,6 +92,10 @@ if __name__ == "__main__":
 	with open(file_path['command'], 'w') as f3:
 		f3.write('stop')
 	print(speed)
+	
+	with open("speed.csv", 'w') as f_out:
+		writer = csv.writer(f_out)
+		writer.writerow(speed)
 
 
 
