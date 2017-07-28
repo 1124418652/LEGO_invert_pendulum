@@ -14,7 +14,7 @@ class pid_set(object):
 	def __init__(self,
 				SetData = 0, ActualData = 0,
 				err = 0, err_integrate = 0, err_tmp = 0,
-				Kp = 1, Ki = 0.008, Kd = 20):
+				Kp = 2, Ki = 0.02, Kd = 30):
 		self.SetData = SetData
 		self.ActualData = ActualData
 		self.err = err
@@ -67,7 +67,7 @@ if __name__ == "__main__":
 		file_path[y] = os.path.join(dir_path, y)
 		
 	pid1 = pid_set()
-	pid1.get_SetData(500)
+	pid1.get_SetData(200)
 	angle = []
 	
 	#make sure the initial angle is 0
@@ -76,24 +76,31 @@ if __name__ == "__main__":
 		
 	with open(file_path["command"], 'w') as f2:
 		f2.write("run-direct")
-		
+	
+	f3 = open(file_path['position'], 'r')
+	f4 = open(file_path['duty_cycle_sp'], 'r+')
+
 	start = time.perf_counter()
 	while time.perf_counter() - start <= 20:
 		t_start = time.perf_counter()
-		with open(file_path['position'], 'r') as f3:
-			val = int(f3.readline())
-			pid1.get_ActualData(val)
-			angle.append(val)
+		f3.seek(0)
+		val = int(f3.readline())
+		pid1.get_ActualData(val)
+		angle.append(val)
 		
 		tmp = int(pid1.pid_realize())
 		if tmp > 90:
 			tmp = 90
 		elif tmp < -90:
 			tmp = -90
-		print(tmp)	
-		with open(file_path['duty_cycle_sp'], 'r+') as f4:
-			f4.write(str(tmp))
+		print(tmp)
+		f4.truncate(0)
+		f4.write(str(tmp))
+		f4.flush()
 		print(time.perf_counter() - t_start)
+
+	f3.close()
+	f4.close()
 	
 	with open(file_path["command"], 'w') as f5:
 		f5.write("stop")
