@@ -14,7 +14,7 @@ class pid_set(object):
 	def __init__(self,
 				SetData = 0, ActualData = 0,
 				err = 0, err_integrate = 0, err_tmp = 0,
-				Kp = 2, Ki = 0.02, Kd = 30):
+				Kp = 10, Ki = 0.04, Kd = 30):
 		self.SetData = SetData
 		self.ActualData = ActualData
 		self.err = err
@@ -45,7 +45,7 @@ class pid_set(object):
 	def pid_realize(self):
 		self.err = self.SetData - self.ActualData
 		index = 0
-		if abs(self.err) >= self.SetData:
+		if abs(self.err) >= (1/4 * self.SetData):
 			pass
 		else:
 			index = 1
@@ -55,17 +55,19 @@ class pid_set(object):
 		return TmpData
 	
 
-if __name__ == "__main__":
-	#get the path and names of every file
-	dir_path = os.path.join(os.path.abspath('.'), "../../../../sys/class/tacho-motor")
-	motor_name = [x for x in os.listdir(dir_path)]
-	dir_path = os.path.join(dir_path, motor_name[0])
+#get the path and names of every file
+dir_path = os.path.join(os.path.abspath('.'), "../../../../sys/class/tacho-motor")
+motor_name = [x for x in os.listdir(dir_path)]
+dir_path = os.path.join(dir_path, motor_name[0])
 	
-	file_name = [y for y in os.listdir(dir_path)]
-	file_path = {}
-	for y in file_name:
-		file_path[y] = os.path.join(dir_path, y)
-		
+file_name = [y for y in os.listdir(dir_path)]
+file_path = {}
+for y in file_name:
+	file_path[y] = os.path.join(dir_path, y)
+
+
+if __name__ == "__main__":
+
 	pid1 = pid_set()
 	pid1.get_SetData(200)
 	angle = []
@@ -89,8 +91,8 @@ if __name__ == "__main__":
 		angle.append(val)
 		
 		tmp = int(pid1.pid_realize())
-		if tmp > 90:
-			tmp = 90
+		if tmp > 100:
+			tmp = 100
 		elif tmp < -90:
 			tmp = -90
 		print(tmp)
