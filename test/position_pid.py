@@ -14,7 +14,7 @@ class pid_set(object):
 	def __init__(self,
 				SetData = 0, ActualData = 0,
 				err = 0, err_integrate = 0, err_tmp = 0,
-				Kp = 10, Ki = 0.04, Kd = 30):
+				Kp = 10, Ki = 0.12, Kd = 28):
 		self.SetData = SetData
 		self.ActualData = ActualData
 		self.err = err
@@ -55,18 +55,17 @@ class pid_set(object):
 		return TmpData
 	
 
-#get the path and names of every file
-dir_path = os.path.join(os.path.abspath('.'), "../../../../sys/class/tacho-motor")
-motor_name = [x for x in os.listdir(dir_path)]
-dir_path = os.path.join(dir_path, motor_name[0])
-	
-file_name = [y for y in os.listdir(dir_path)]
-file_path = {}
-for y in file_name:
-	file_path[y] = os.path.join(dir_path, y)
-
-
 if __name__ == "__main__":
+
+	#get the path and names of every file
+	dir_path = os.path.join(os.path.abspath('.'), "../../../../sys/class/tacho-motor")
+	motor_name = [x for x in os.listdir(dir_path)]
+	dir_path = os.path.join(dir_path, motor_name[0])
+	
+	file_name = [y for y in os.listdir(dir_path)]
+	file_path = {}
+	for y in file_name:
+		file_path[y] = os.path.join(dir_path, y)
 
 	pid1 = pid_set()
 	pid1.get_SetData(200)
