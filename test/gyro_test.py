@@ -10,25 +10,33 @@ dir_path3_name = os.listdir(dir_path3)
 dir_path3 = os.path.join(dir_path3, dir_path3_name[1])
 dir_path3_mode = os.path.join(dir_path3, "mode")
 dir_path3_value0 = os.path.join(dir_path3, "value0")
+dir_path3_value1 = os.path.join(dir_path3, "value1")
 
 f_mod = open(dir_path3_mode, 'r+')
-f_val = open(dir_path3_value0, 'r')
+f_val_0 = open(dir_path3_value0, 'r')
+f_val_1 = open(dir_path3_value1, 'r')
+
 
 f_mod.truncate(0)
-f_mod.write('GYRO-RATE')
+f_mod.write('GYRO-G&A')
 f_mod.flush()
 
-f_val.seek(0)
-init_speed = int(f_val.readline())
+f_val_0.seek(0)
+init_speed = int(f_val_0.readline())
+f_val_1.seek(0)
+init_angle = int(f_val_1.readline())
 
-f_mod.truncate(0)
-f_mod.write('GYRO-ANG')
-f_mod.flush()
+print("init speed = %r\tinit angle = %r " %(init_speed, init_angle))
 
-while True:
-	start = time.perf_counter()
-	f_val.seek(0)
-	angle = int(f_val.readline()) - init_speed * (time.perf_counter() - start)
-	print("angle = ", angle)
+start = time.perf_counter()
+while time.perf_counter() - start < 10:
+	f_val_0.seek(0)
+	speed = int(f_val_0.readline())
+	f_val_1.seek(0)
+	angle = int(f_val_1.readline())
+	print("speed = %r\tangle = %r" %(speed, angle))
 
+f_mod.close()
+f_val_0.close()
+f_val_1.close()
 
