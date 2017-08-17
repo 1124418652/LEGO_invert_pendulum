@@ -17,6 +17,9 @@ f_mod = open(dir_path3_mode, 'r+')
 f_val_0 = open(dir_path3_value0, 'r')
 f_val_1 = open(dir_path3_value1, 'r')
 
+f_mod.truncate(0)
+f_mod.write('GYRO-CAL')
+f_mod.flush()
 
 f_mod.truncate(0)
 f_mod.write('GYRO-G&A')

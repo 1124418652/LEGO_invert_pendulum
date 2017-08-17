@@ -11,7 +11,7 @@ class pid_set(object):
 	def __init__(self,
 				SetData = 0, ActualData = 0,
 				err = 0, err_integrate = 0, err_tmp = 0,
-				Kp = 5, Ki = 0.1, Kd = 5):
+				Kp = 5, Ki = 0.3, Kd = 5):
 		self.SetData = SetData
 		self.ActualData = ActualData
 		self.err = err
@@ -72,18 +72,16 @@ if __name__ == "__main__":
 	f_mod = open(dir_path3_mode, 'r+')
 	f_val_0 = open(dir_path3_value0, 'r')
 	f_val_1 = open(dir_path3_value1, 'r')
+
+	#calibrate the gyro sensor
+	f_mod.truncate(0)
+	f_mod.write('GYRO-CAL')
+	f_mod.flush()
 	
-	#get the initial value of rotation speed
+	#change the mode of gyro sensor into rotation speed and angle
 	f_mod.truncate(0)
 	f_mod.write('GYRO-G&A')
 	f_mod.flush()
-
-	f_val_0.seek(0)
-	init_speed = int(f_val_0.readline())
-
-	#get the initial value of angle
-	f_val_1.seek(0)
-	init_angle = int(f_val_1.readline())
 
 	#open the files of motor1
 	f_com1 = open(dir_path1_command, 'w')
@@ -126,8 +124,8 @@ if __name__ == "__main__":
 		
 		#set the angle of the car
 		pid_angle.get_SetData(init_angle)
-		f_val_1.seek(0)
-		actual_angle = int(f_val_1.readline())
+		f_val_0.seek(0)
+		actual_angle = int(f_val_0.readline())
 		if actual_angle >= 10:
 			tmp = 100
 		elif actual_angle <= -10:
@@ -161,8 +159,9 @@ if __name__ == "__main__":
 	f_pos2.close()
 	f_duty1.close()
 	f_duty2.close()
-	#f_mod.close()
-	f_val.close()
+	f_mod.close()
+	f_val_0.close()
+	f_val_1.close()
 
 
 
