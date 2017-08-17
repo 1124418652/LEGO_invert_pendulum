@@ -3,6 +3,7 @@
 import os
 import sys
 import time
+import csv
 
 
 dir_path3 = os.path.join(os.path.abspath('.'), "../../../../sys/class/lego-sensor/")
@@ -22,19 +23,24 @@ f_mod.write('GYRO-G&A')
 f_mod.flush()
 
 f_val_0.seek(0)
-init_speed = int(f_val_0.readline())
+init_speed = int(f_val_1.readline())
 f_val_1.seek(0)
-init_angle = int(f_val_1.readline())
+init_angle = int(f_val_0.readline())
 
 print("init speed = %r\tinit angle = %r " %(init_speed, init_angle))
 
+f_gyrotest = open("gyrotest.csv", 'w')
+writer = csv.writer(f_gyrotest)
+writer.writerow(("speed", "angle"))
 start = time.perf_counter()
 while time.perf_counter() - start < 10:
 	f_val_0.seek(0)
-	speed = int(f_val_0.readline())
+	speed = int(f_val_1.readline())
 	f_val_1.seek(0)
-	angle = int(f_val_1.readline())
+	angle = int(f_val_0.readline())
 	print("speed = %r\tangle = %r" %(speed, angle))
+	writer.writerow((speed, angle))
+	
 
 f_mod.close()
 f_val_0.close()
